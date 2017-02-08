@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- 链接bootstrap的css文件 -->
-    <link href="css/styles.css" rel="stylesheet" media="screen">
-    <!--- 自定义的css文件，会把上面的覆盖 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <title>Boootstrap</title>
+    <style>
+        #packt {
+            border-style: solid;
+            border-color: #000000;
+            color: #FF00FF;
+        }
+        #pub {
+            border-style: solid;
+            border-color: #000000;
+            color: #008000;
+        }
+        #packtlib {
+            border-style: dotted;
+            border-color: lime;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <button type="button" class="btn btn-default btn-sm" >test</button>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+   <div class="container">
+       <h1>Hello world</h1>
+       <p>An example to showcase the Bootstrap Grid
+       class </p>
+
+       <div class="row">
+           <div class="col-md-6" id="packtlib">
+               <div class="row">
+                   <div class="col-md-6" id="packt">
+                       <p>haha</p>
+                   </div>
+                   <div class="col-md-6" id="pub">
+                       <p>hehe</p>
+                   </div>
+               </div>
+           </div>
+      </div>
+  </div>
 </body>
 </html>
