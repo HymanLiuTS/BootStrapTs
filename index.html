@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <title>Boootstrap</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- 链接bootstrap的css文件 -->
-    <link href="css/styles.css" rel="stylesheet" media="screen">
-    <title>Boootstrap</title>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <style>
+        #packtpub
+        {
+            padding-top:25px;
+            padding-bootom:25px;
+            padding-right:50px;
+            padding-left:50px;
+        }
+    </style>
 </head>
-<body>
-    <div class="page">
-        <header class="site-header">
-            <h1> 网络编程（58）—— Windows下使用CSocket搭建回声服务端和客户端</h1>
-        </header>
-        <div class="content">
-            <article role="main">
-                <header class="site-header">
-                    <h2> 网络编程（58）—— Windows下使用CSocket搭建回声服务端和客户端</h2>
-                </header>
-                <div>
-                    <p>
-                        CSocket是对CAsyncSocket的一个再次封装，它将CAsyncSocket这种异步不阻塞的socket封装成了同步阻塞的socket。
-                        它的实现原理其实很简单，我们应该留意到在CAsyncSocket中Accept、Send、Receive函数被定义成了虚函数：
-                        virtual BOOL Accept( CAsyncSocket& rConnectedSocket, SOCKADDR* lpSockAddr = NULL, int* lpSockAddrLen = NULL );
-                        virtual int Receive( void* lpBuf, int nBufLen, int nFlags = 0 );
-                        virtual int Send( const void* lpBuf, int nBufLen, int nFlags = 0 );
-                    </p>
-                    <p>
-                        CSocket就是通过继承上述三个虚函数，在函数内部获取先调用WSAGetLastError获取错误，如果错误为WSAEWOULDBLOCK，
-                        说明IO操作未能完成，此时，它将进入消息循环，知道等到该IO事件完成为止。如果用伪代码，表示如下：
-                    </p>
-                    <p>
-                        其实对于使用者来讲使用CAsyncSocket和CSocket基本的编程步骤都是一致的，不同的只是它们两者之间的内部的处理逻辑。
-                        比如在上一文中，我们自定义了一个CMySocket类继承自CAsyncSocket，而如果我想要使用CSocket类，只需将上一文中的CMySocket父类改成CSocket：
-                    </p>
-                </div>
-                <footer class="site-footer">
-                    <p>Posted on:25-October-2014</p>
-                </footer>
-            </article>
-            <div role="complementary">
-                <aside>
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        <li><a href="">1月1日</a></li>
-                        <li><a href="">1月21日</a></li>
-                        <li><a href="">2月18日</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </div>
-        <footer class="site-footer">
-            <p>Copyright &copy;2014</p>
-        </footer>
-    </div>
+<body id="packtpub">
+    <h1>Hello World</h1>
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <h4>Hello World</h4>
+    <h5>Hello World</h5>
+    <h6>Hello World</h6>
+    <h1><small>Hello World</small></h1>
+    <h2><small>Hello World</small></h2>
+    <h3><small>Hello World</small></h3>
+    <h4><small>Hello World</small></h4>
+    <h5><small>Hello World</small></h5>
+    <h6><small>Hello World</small></h6>
+    <p>p 元素</p>
+    <br>
+    <p class="lead">p 元素</p>
+    <p><u>下划线</u></p>
+    <p><strong>加粗</strong></p>
+    <p><em>重点强调</em></p>
+    <p><mark>引用</mark></p>
+    <p><del>删除线</del></p>
+    <p class="text-left">左对齐</p>
+    <p class="text-right">右对齐</p>
+    <p class="text-center">居中</p>
+    <p class="text-justify">GitHub可以托管各种git库，并提供一个web界面，但与其它像 SourceForge或Google Code这样的服务
+        不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”
+        的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码
+        合并。已经有人将GitHub称为代码玩家的MySpace。</p>
+    <p class="text-muted bg-primary">灰色字体</p>
+    <p class="text-warning bg-succeed">橙色字体</p>
+    <p class="text-danger bg-info">红色字体</p>
+    <p class="text-success bg-warning">绿色字体</p>
+    <p class="text-info bg-danger">蓝色字体</p>
+    <p class="text-primary">天蓝色字体</p>
 </body>
 </html>
