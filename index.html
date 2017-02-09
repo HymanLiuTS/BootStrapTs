@@ -4,43 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- 链接bootstrap的css文件 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/styles.css" rel="stylesheet" media="screen">
     <title>Boootstrap</title>
-    <style>
-        #packt {
-            border-style: solid;
-            border-color: #000000;
-            color: #FF00FF;
-        }
-        #pub {
-            border-style: solid;
-            border-color: #000000;
-            color: #008000;
-        }
-        #packtlib {
-            border-style: dotted;
-            border-color: lime;
-        }
-    </style>
 </head>
 <body>
-   <div class="container">
-       <h1>Hello world</h1>
-       <p>An example to showcase the Bootstrap Grid
-       class </p>
-
-       <div class="row">
-           <div class="col-md-6" id="packtlib">
-               <div class="row">
-                   <div class="col-md-6" id="packt">
-                       <p>haha</p>
-                   </div>
-                   <div class="col-md-6" id="pub">
-                       <p>hehe</p>
-                   </div>
-               </div>
-           </div>
-      </div>
-  </div>
+    <div class="page">
+        <header class="site-header">
+            <h1> 网络编程（58）—— Windows下使用CSocket搭建回声服务端和客户端</h1>
+        </header>
+        <div class="content">
+            <article role="main">
+                <header class="site-header">
+                    <h2> 网络编程（58）—— Windows下使用CSocket搭建回声服务端和客户端</h2>
+                </header>
+                <div>
+                    <p>
+                        CSocket是对CAsyncSocket的一个再次封装，它将CAsyncSocket这种异步不阻塞的socket封装成了同步阻塞的socket。
+                        它的实现原理其实很简单，我们应该留意到在CAsyncSocket中Accept、Send、Receive函数被定义成了虚函数：
+                        virtual BOOL Accept( CAsyncSocket& rConnectedSocket, SOCKADDR* lpSockAddr = NULL, int* lpSockAddrLen = NULL );
+                        virtual int Receive( void* lpBuf, int nBufLen, int nFlags = 0 );
+                        virtual int Send( const void* lpBuf, int nBufLen, int nFlags = 0 );
+                    </p>
+                    <p>
+                        CSocket就是通过继承上述三个虚函数，在函数内部获取先调用WSAGetLastError获取错误，如果错误为WSAEWOULDBLOCK，
+                        说明IO操作未能完成，此时，它将进入消息循环，知道等到该IO事件完成为止。如果用伪代码，表示如下：
+                    </p>
+                    <p>
+                        其实对于使用者来讲使用CAsyncSocket和CSocket基本的编程步骤都是一致的，不同的只是它们两者之间的内部的处理逻辑。
+                        比如在上一文中，我们自定义了一个CMySocket类继承自CAsyncSocket，而如果我想要使用CSocket类，只需将上一文中的CMySocket父类改成CSocket：
+                    </p>
+                </div>
+                <footer class="site-footer">
+                    <p>Posted on:25-October-2014</p>
+                </footer>
+            </article>
+            <div role="complementary">
+                <aside>
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        <li><a href="">1月1日</a></li>
+                        <li><a href="">1月21日</a></li>
+                        <li><a href="">2月18日</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <p>Copyright &copy;2014</p>
+        </footer>
+    </div>
 </body>
 </html>
