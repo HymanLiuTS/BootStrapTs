@@ -5,29 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- 链接bootstrap的css文件 -->
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-    <style>
-        #packt {
-            padding-top:25px;
-            padding-bootom:25px;
-            padding-right:50px;
-            padding-left:50px;
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" media="screen">
+    <script href="js/bootstrap.min.js"></script>
+    <script href="js/jquery.min.js"></script>
+    <style type="text/css">
+        #packt{
+            padding: 30px;
         }
     </style>
 </head>
-<body>
-    <div class="packt">
-        <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-sd-video"></span> Vedio</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-book"></span> Book</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-inbox"></span>Inbox </a></li>
-        </ul>
-        <ul class="nav nav-pills nav-justified">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-sd-video"></span> Vedio</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-book"></span> Book</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-inbox"></span>Inbox </a></li>
-        </ul>
+<body class="packt">
+    <div>
+       <ul class="nav nav-tabs">
+           <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Packt Home Page</a></li>
+           <li><a href="#"><span class="glyphicon glyphicon-user"></span>Authors</a></li>
+           <li class="dropdown">
+               <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blogs<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://www.packtpub.com/books/content/blogs"><span class="glyphicon glyphicon-book"></span>Blog</a></li>
+                    <li><a href="https://www.packtpub.com/books/content/tech-hub"><span class="glyphicon glyphicon-bookmark"></span>Tech Hub</a></li>
+                    <li><a href="https://www.packtpub.com/books/content/bookmark"><span class="glyphicon glyphicon-book">Article Network</span></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+           </li>
+       </ul>
     </div>
-
 </body>
 </html>
